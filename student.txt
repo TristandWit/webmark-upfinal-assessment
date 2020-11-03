@@ -1,0 +1,4 @@
+Student name: Tristan de Wit
+Student number: 648167
+Student class: INF2-C
+URL student GitHub repository: https://github.com/TristandWit/webmark-upfinal-assessment.git
