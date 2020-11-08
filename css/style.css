@@ -25,9 +25,6 @@ body {
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 300;
-    /* -webkit-print-color-adjust: exact;
-    background: #FFC72B;
-    color: #eee; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,10 +51,14 @@ a{
     position: relative;
 }
 
+a:active{
+    opacity: .8;
+}
+
 a::after{
     content: "";
     position: absolute;
-    background-color: black;
+    background-color: #0a0a0a;
     width: 100%;
     height: 0.1em;
     bottom: 0;
@@ -69,6 +70,12 @@ a::after{
 
 a:hover::after{
     transform: scaleX(1);
+}
+
+a:active:after{
+    transform: scaleX(1);
+    background-color: #4790d0;
+    height: 5px;
 }
 
 /* nav */
@@ -142,12 +149,6 @@ a:hover::after{
     width: 100%;
 }
 
-.grid__layout-howsolarworks{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-}
-
 /* footer */
 
 .footer__container{
@@ -178,6 +179,10 @@ a:hover::after{
 .header__title,
 .header__payoff{
     font-size: 5vmin;
+}
+
+.header__logo{
+    max-width: 100px;
 }
 
 /* index page */
@@ -253,14 +258,19 @@ a:hover::after{
 
 /* howsolarworks page */
 
+.grid__layout-howsolarworks{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .header__howsolarworks{
     grid-column: 1/4;
-    grid-row: 1/2;
+    grid-row: 1/4;
 }
 
 .nav__howsolarworks{
     grid-column: 1/4;
-    grid-row: 2/3;
+    grid-row: 4/5;
 }
 
 .howsolarworks__article{
@@ -271,46 +281,37 @@ a:hover::after{
 }
 
 .howsolarworks__article::first-letter{
-    color: #4d9add;
+    color: #4997db;
 }
 
 #article__1{
     grid-column: 2/3;
-    grid-row: 3/9;
+    grid-row: 5/11;
 }
 #article__2{
     grid-column: 1/2;
-    grid-row: 3/5;
+    grid-row: 5/7;
 }
 #article__3{
     grid-column: 3/4;
-    grid-row: 3/6;
+    grid-row: 5/8;
 }
 #article__4{
     grid-column: 3/4;
-    grid-row: 6/9;
+    grid-row: 8/11;
 }
 #article__5{
     grid-column: 1/2;
-    grid-row: 5/10;
+    grid-row: 7/12;
 }
 #article__6{
     grid-column: 2/4;
-    grid-row: 9/10;
-}
-
-.howsolarworks__footer {
-    grid-row: 12/13;
-    grid-column: 1/3;
-}
-
-.howsolarworks__cookie-statements {
-    grid-row: 12/13;
-    grid-column: 3/4;
+    grid-row: 11/12;
 }
 
 .howsolarworks__aside{
-    grid-row: 10/12;
+    grid-row: 12/14;
+    grid-column: 2/3;
 }
 
 .howsolarworks__aside a{
@@ -327,19 +328,60 @@ a:hover::after{
 .howsolarworks__aside:first-of-type{
     grid-column: 1/2;
 }
-.howsolarworks__aside:nth-of-type(2){
-    grid-column: 2/3;
-}
+
 .howsolarworks__aside:last-of-type{
     grid-column: 3/4;
 }
 
+.howsolarworks__footer {
+    grid-column: 1/3;
+    grid-row: 14/16;
+    width: 100%;
+}
+
 /* eusolar page */
 
-.eusolar__table-intro{
+.eusolar__maincontent{
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    position: relative;
+    padding: 0 5%;
+}
+
+.eusolar__aside-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 50px 0;
+    padding: 0px 10px;
+}
+
+.eusolar__aside{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.eusolar__aside h4{
     text-align: center;
-    margin: 2em 0;
-    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.eusolar__aside:last-of-type{
+    margin-bottom: 0;
+}
+
+.eusolar__aside a{
+    display: block;
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.eusolar__aside a img{
+    width: 100%;
+}
+
+.eusolar__table-container{
+    width: 100%;
 }
 
 .eusolar__table { 
@@ -347,13 +389,13 @@ a:hover::after{
     margin: 0 auto;
 }
 .eusolar__table th { 
-    background-color:#000;
+    background-color:#080808;
     color:white;
 }
 .eusolar__table td, 
 .eusolar__table th { 
     padding:5px;
-    border-color: #000; 
+    border-color: #0c0c0c; 
     border-width: 1px;
     border-style: double;
 }
@@ -380,38 +422,161 @@ a:hover::after{
     font-weight: 600;
 }
 
-.eusolar__table .table__copyright{
-    text-align: left;
-    background-color: #4790d0;
-    color: white;
-}
-
-.eusolar__aside-container{
+.eusolar__table-footer{
     width: 100%;
     display: flex;
-    margin: 50px 0;
-}
-
-.eusolar__aside{
-    width: 100%;
-    flex:33.333333333%;
-    max-width:33.333333333%;
-}
-
-.eusolar__aside a{
-    display: block;
-    width: 100%;
-    max-width: 100px;
+    justify-content: center;
+    max-width: 896px;
     margin: 0 auto;
 }
 
-.eusolar__aside a img{
+.eusolar__table-footer p{
+    background-color: #4790d0;
+    padding: 2rem 0;
+    color: white;
+    border: 1px solid black;
+    border-top: none;
     width: 100%;
+    text-align: center;
+}
+
+.eusolar__table-intro-mobile{
+    text-align: center;
+    display: none;
+}
+
+.eusolar__data-article-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 10px;
+}
+
+.eusolar__table-intro{
+    display: block;
+    text-align: center;
+    margin-bottom: .3em;
+    font-size: 28px;
+}
+
+.eusolar__data-article p{
+    text-align: center;
 }
 
 /* contact page */
 
+.contact__information{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    text-align: center;
+}
 
+.contact__information h3{
+    margin-bottom: 10px;
+}
+
+.contact__maincontent{
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    padding: 0 5%;
+}
+
+.contact__aside-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin: 50px 0;
+    padding: 0px 10px;
+}
+
+.form__fieldset{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #4790d0;
+    color: #4790d0;
+    margin: 20px 0;
+}
+
+.form__legend{
+    font-weight: 900;
+}
+
+.form__label{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.form__label:first-of-type{
+    margin-top: 10px;
+}
+
+.form__input{
+    margin-top: 5px;
+    border-radius: 0;
+}
+
+.form__fieldset label textarea{
+    height: 150px;
+}
+
+.submit__btn{
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    background-color: #4790d0;
+    border: none;
+    padding: 5px 0px;
+    color: white;
+    text-transform: uppercase;
+    transition: all .2s linear;
+    cursor: pointer;
+    border: 2px solid #4790d0;
+}
+
+.submit__btn:focus{
+    background-color: white;
+    color: #428dce;
+}
+
+.submit__btn:hover{
+    background-color: white;
+    color: #4d98da;
+}
+
+.contact__aside{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.contact__aside h4{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact__aside:last-of-type{
+    margin-bottom: 0;
+}
+
+.contact__aside a{
+    display: block;
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.contact__aside a img{
+    width: 100%;
+}
 
 /* responsive content */
 
@@ -469,10 +634,102 @@ a:hover::after{
 
     /* howsolarworks page */
 
+    .grid__layout-howsolarworks{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .header__howsolarworks{
+        grid-column: 1/3;
+        grid-row: 1/4;
+    }
+    
+    .nav__howsolarworks{
+        grid-column: 1/3;
+        grid-row: 4/5;
+    }
+    
+    #article__1{
+        grid-column: 1/2;
+        grid-row: 5/7;
+    }
+    #article__2{
+        grid-column: 2/3;
+        grid-row: 5/8;
+    }
+    #article__3{
+        grid-column: 1/2;
+        grid-row: 7/11;
+    }
+    #article__4{
+        display: none;
+    }
+    #article__5{
+        grid-column: 2/3;
+        grid-row: 8/11;
+    }
+    #article__6{
+        grid-column: 1/3;
+        grid-row: 11/13;
+    }
+    
+    .howsolarworks__aside{
+        grid-row: 13/15;
+        grid-column: 2/3;
+    }
+    
+    .howsolarworks__aside:first-of-type{
+        grid-column: 1/2;
+    }
+    
+    .howsolarworks__aside:last-of-type{
+        display: none;
+    }
+    
+    .howsolarworks__footer {
+        grid-column: 1/2;
+        grid-row: 15/17;
+        width: 100%;
+    }
+
+    /* eusolar page */
+    .eusolar__maincontent{
+        grid-template-columns: 1fr;
+    }
+
+    .eusolar__aside-container{
+        flex-direction: row;
+    }
+
+    .eusolar__aside:first-child{
+        display: none;
+    }
+    .eusolar__table tr td:nth-child(2),
+    .eusolar__table tr td:nth-child(3){
+        display: none;
+    }
+    .eusolar__table tr > td{
+        min-width: unset;
+    }
+    .eusolar__table-footer{
+        max-width: 716px;
+    }
+    .eusolar__maincontent{
+        padding: 10px;
+    }
+      /* contact */
+    
+      .contact__maincontent{
+        grid-template-columns: 1fr 200px;
+    }
 }
 
 /* mobile */
 @media only screen and (max-width: 480px) {
+
+    .page-start-section{
+        display: flex;
+    }
 
     /* footer */
 
@@ -502,19 +759,15 @@ a:hover::after{
         width: 50px;
         display: flex;
         align-items: center;
-        justify-content: center;
         flex-direction: column;
         padding-top: 10px;
-    }
-  
-    .nav__container{
         position: relative;
     }
 
     .nav__hidden-btn{
         display: block;
         width: 50px;
-        height: 30px;
+        height: 40px;
         position: absolute;
         top: 0;
         left: 0;
@@ -553,9 +806,14 @@ a:hover::after{
         display: none;
     }
 
+    .aside__container{
+        margin: 2em 0;
+    }
+
     .article__product-article{
         display: flex;
         flex-direction: column;
+        margin-bottom: 2em;
     }
 
     .article__image{
@@ -570,5 +828,115 @@ a:hover::after{
     
     .article__image{
         float: unset;
+    }
+    /* howsolarworks page */
+
+    .grid__layout-howsolarworks{
+        display: grid;
+        grid-template-columns: calc(100% - 50px) 50px;
+    }
+    
+    .header__howsolarworks{
+        grid-column: 1/2;
+        grid-row: 1/3;
+        margin-bottom: 30px;
+    }
+
+    .nav__howsolarworks{
+        grid-column: 2/3;
+        grid-row: 1/3;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 100%;
+        position: relative;
+    }
+
+    .nav__hidden-btn-right{
+        left: unset;
+        right: 0;
+    }
+    
+    #article__1{
+        grid-column: 1/3;
+        grid-row: 12/15;
+    }
+    #article__2{
+        grid-column: 1/3;
+        grid-row: 9/12;
+    }
+    #article__3{
+        grid-column: 1/3;
+        grid-row: 6/9;
+    }
+    #article__5{
+        grid-column: 1/3;
+        grid-row: 3/6;
+    }
+    #article__6{
+        display: none;
+    }
+    
+    .howsolarworks__aside{
+        grid-row: 16/17;
+        grid-column: 1/3;
+        margin-bottom: 10px;
+    }
+    
+    .howsolarworks__aside:first-of-type{
+        grid-row: 15/16;
+        grid-column: 1/3;
+        margin-top: 10px;
+    }
+
+    
+    .howsolarworks__aside:last-of-type{
+        display: block;
+        grid-row: 17/18;
+        grid-column: 1/3;
+    }
+    
+    .howsolarworks__footer {
+        grid-column: 1/3;
+        grid-row: 18/20;
+        width: 100%;
+    }
+
+    /* eusolar page */
+
+    .eusolar__table tr td:nth-child(4),
+    .eusolar__table tr td:nth-child(5){
+        display: none;
+    }
+    .eusolar__aside-container{
+        flex-direction: column;
+    }
+    
+    .eusolar__aside:first-child{
+        display: block;
+    }
+    .eusolar__table-intro-mobile{
+        display: block;
+        margin: 20px 0;
+    }
+    
+    .eusolar__data-article-container{
+        display: none;
+    }
+    /* contact */
+    
+    .contact__maincontent{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* mobile */
+@media only screen and (max-width: 360px){
+    /* eusolar page */
+    .eusolar__table{
+        font-size: 12px;
+    }
+    .eusolar__maincontent{
+        padding: 2px;
     }
 }
